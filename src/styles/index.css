@@ -1,0 +1,33 @@
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+div.recommonent div.recommonent_title {
+  padding: 10px;
+  color: #666;
+  font-size: 14px;
+}
+div.recommonent div.recommonent_content {
+  padding: 10px;
+  background-color: #fff;
+}
+div.recommonent div.recommonent_content div.rec_item {
+  padding: 5px;
+  display: flex;
+  border-bottom: 1px solid #ccc;
+}
+div.recommonent div.recommonent_content div.rec_item div.rec_item_img_wrap {
+  flex: 1;
+}
+div.recommonent div.recommonent_content div.rec_item div.rec_item_goods_wrap {
+  flex: 6;
+  overflow: hidden;
+  font-size: 16px;
+  font-weight: 600;
+}
+div.recommonent div.recommonent_content div.rec_item div.rec_item_goods_wrap .rec_item_title {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}

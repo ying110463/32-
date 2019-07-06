@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React,{Fragment,Component} from 'react';
+import {HashRouter as Router,Link,Route} from 'react-router-dom'
+import Home from './pages/Home'
+import Cart from './pages/Cart'
+import Mine from './pages/Mine'
+import MyLayout from './components/MyLayout'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component{
+  render(){
+    return(
+      <Fragment>
+        {this.props.children}
+        <Router>
+          <Route path='/' exact render={(props)=><MyLayout {...props}><Home /></MyLayout>}></Route>
+          <Route path='/Cart' exact render={(props)=><MyLayout {...props}><Cart/></MyLayout>}></Route>
+          <Route path='/Mine' exact render={(props)=><MyLayout {...props}><Mine/></MyLayout>}></Route>
+        </Router>
+      </Fragment>
+    )
+  }
 }
 
 export default App;
